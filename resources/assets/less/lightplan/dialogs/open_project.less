@@ -1,0 +1,122 @@
+#open_project_dialog {
+	#project_list_loading {
+		text-align:center;
+		margin-top:40px;
+	}
+	.project_list_header {
+		color: @green;
+		overflow:auto;
+		padding:5px;
+		margin: 15px;
+		border-bottom: solid @bordercolor 1px;
+
+		div {
+
+		}
+
+		div:first-child {
+			float:left;
+			width:40%;
+			border-right: solid @bordercolor 1px;
+		}
+		div:last-child {
+			float:right;
+			width:56%;
+		}
+	}
+	.project_row {
+		overflow:auto;
+		padding:10px;
+		margin: 10px;
+		color:@fontcolor;
+		border-bottom: solid @bordercolor 1px;
+
+		&:hover {
+			background-color:@greybackground;
+		}
+
+        &:last-child {
+          border-bottom: none;
+        }
+
+		.project_info {
+			float:left;
+			width: 38%;
+            padding: 0 2% 0 0;
+			min-height:80px;
+			border-right: solid @bordercolor 1px;
+
+            .project_name {
+                padding: 5px;
+                cursor:pointer;
+
+                &:hover{
+                  background-color: @bgColour;
+                  color: #fff;
+                }
+            }
+			
+			.delete_project {
+                float: left;
+                margin: 10px 0 5px;
+                
+                img {
+                    position: relative;
+                    top: 4px;
+                    right: 3px;
+                }
+			}
+		}
+
+      .project_details {
+        margin-left: 0px;
+        width:58%;
+        float:right;
+      }
+
+		/*.design_list {
+			margin-left: 0px;
+			width:58%;
+			float:right;
+			list-style-type: none;
+
+			li {
+				border-bottom: solid @bordercolor 1px;
+				padding: 5px 5px 3px 10px;
+				cursor:pointer;
+				&:hover{
+					background-color:@green;
+					color:#fff;
+					.delete_design {
+						display:inline;
+					}
+				}
+				.delete_design {
+					display:none;
+					float:right;
+				}
+			}
+			li:last-child {
+				border-bottom: none;
+			}
+		}*/
+	}
+}
+
+#no_projects_message {
+	text-align: center;
+	font-size: 18px;
+	margin-top: 40px;
+	button {
+			width: 160px;
+			padding: 8px;
+			margin: 0px;
+			margin-top: 30px;
+			background-image: none;
+			background-color: @green;
+			color: #ffffff;
+			&:hover {
+				border-color: @greybackground;
+			}
+		}
+}

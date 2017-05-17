@@ -1,0 +1,640 @@
+/* Icons */
+
+.icon {
+	display: inline-block;
+	.background-image('icons.png');
+	
+	&.search {
+    	width: 25px;
+    	height: 25px;
+    	background-position: -41px -112px;
+    }
+    
+    /* Store locator */
+    &.marker {
+    	width: 25px;
+    	height: 30px;
+    	background-position: -10px -349px;
+    	
+    	&.showroom {
+        	//background-position: -81px -349px;
+        	background-position: -194px -348px;
+        }
+    	
+    	&.sale {
+        	background-position: -228px -349px;
+        	
+        	&.showroom {
+            	background-position: -161px -349px;
+            }
+        }
+    	
+    	&.luk {
+        	background-position: -48px -349px;
+        	
+        	&.showroom {
+            	background-position: -124px -349px;
+            }
+        }
+    }
+    
+    &.store-locator {
+    	width: 30px;
+    	height: 35px;
+    	background-position: -5px -351px;
+    }
+    
+    &.store-locator-sm-white {
+    	width: 30px;
+    	height: 25px;
+    	background-position: -5px -385px;
+    }
+    
+    /* Depricated: Calculator */
+    &.cost {
+    	width: 30px;
+    	height: 30px;
+    	background-position: -111px -5px;
+    }
+    
+    &.usage {
+    	width: 30px;
+    	height: 30px;
+    	background-position: -111px -38px;
+    }
+    
+    &.lights {
+    	width: 30px;
+    	height: 30px;
+    	background-position: -111px -68px;
+    }
+    
+    
+    &.next-white {
+    	width: 33px;
+    	height: 33px;
+    	background-position: -41px -5px;
+    }
+    
+    /*
+    &.next-green {
+    	width: 33px;
+    	height: 33px;
+    	background-position: -74px -468px;
+    }
+    
+    &.next-grey {
+    	width: 33px;
+    	height: 33px;
+    	background-position: -141px -468px;
+    }
+    */
+    
+    &.plus {
+    	width: 19px;
+    	height: 19px;
+    	background-position: -12px -114px;
+    }
+    
+    /* Product icons */
+
+    &.icon-cri {
+    	width: 50px;
+    	height: 50px;
+    	background-position: -7px -136px;
+    }
+    
+    &.icon-lumens {
+    	width: 50px;
+    	height: 50px;
+    	background-position: -62px -136px;
+    }
+    
+    &.icon-wattage {
+    	width: 50px;
+    	height: 50px;
+    	background-position: -115px -136px;
+    }
+    
+    &.tru-colour {
+    }
+}
+
+.selected {
+    
+    .icon {
+
+        &.marker {
+            background-position: -10px -383px !important;
+        }
+        
+        /* Depricated: Calculator */
+        &.cost {
+        	background-position: -143px -5px;
+        }
+        
+        &.usage {
+        	background-position: -143px -38px;
+        }
+        
+        &.lights {
+        	background-position: -143px -68px;
+        }
+
+    }
+}
+
+/* Social icons */
+
+.social-icon {
+	display: inline-block;
+	width: 42px;
+	height: 41px;
+	.background-image('icons_social.png');
+	
+	&.small {
+    	width: 30px;
+    	height: 30px;
+    }
+    
+    &.facebook {
+    	background-position: 0 0;
+
+    	&.yellow {
+        	background-position: 0 -44px;
+        	
+        	&.small {
+            	background-position: -167px -56px;
+            }
+        }
+    }
+    
+    &.twitter {
+    	background-position: -45px 0;
+    	
+    	&.yellow {
+        	background-position: -45px -44px;
+        	
+        	&.small {
+            	background-position: -201px -56px;
+            }
+        }
+    }
+    
+    &.google {
+    	background-position: -90px 0;
+    	
+    	&.yellow {
+        	background-position: -90px -45px;
+        	
+        	&.small {
+            	background-position: -236px -56px;
+            }
+        }
+    }
+    
+    &.link {
+        
+        &.small {
+    	    background-position: -132px -56px;
+        }
+    }
+}
+
+.social-icon-share {
+	display: inline-block;
+	width: 15px;
+	height: 14px;
+    vertical-align: middle;
+	.background-image('icons_social_share.png');
+}
+
+.facebook .social-icon-share {
+	background-position: -35px -2px;
+    width: 12px;
+    margin: 0 0 1px 3px;
+}
+
+.twitter .social-icon-share {
+	background-position: -2px -4px;
+}
+
+.google-plus .social-icon-share {
+	background-position: -19px -2px;
+    margin-top: -2px;
+}
+
+.social {
+    position: relative;
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    vertical-align: middle;
+    
+    &:before,
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        .background-image('icons_social.png');
+        .transition(opacity 0.3s);
+    }
+    
+    &:before {
+        opacity: 0;
+    }
+
+    &:after {
+        opacity: 1;
+    }
+    
+    &:hover {
+        &:before {
+            opacity: 1;
+        }
+
+        &:after {
+            opacity: 0;
+        }
+    }
+    
+    &.facebook {
+        
+        &:before {
+            background-position: -92px -125px;
+        }
+        
+        &:after {
+            background-position: -92px -87px;
+        }
+    }
+    
+    &.twitter {
+        
+        &:before {
+            background-position: -3px -125px;
+        }
+        
+        &:after {
+            background-position: -3px -87px;
+        }
+    }
+    
+    &.linkedin {
+        
+        &:before {
+            background-position: -48px -125px;
+        }
+        
+        &:after {
+            background-position: -48px -87px;
+        }
+    }
+    
+    &.google {
+        
+        &:before {
+            background-position: -137px -125px;
+        }
+        
+        &:after {
+            background-position: -137px -87px;
+        }
+    }
+    
+    &.youtube {
+        
+        &:before {
+            background-position: -182px -125px;
+        }
+        
+        &:after {
+            background-position: -182px -87px;
+        }
+    }
+}
+
+.icon-browsers {
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+	margin: 0 12px;
+	.background-image('icons-browsers.png');
+	
+	&.firefox {
+    	background-position: -6px -60px;
+    	
+    	&:hover {
+        	background-position: -6px -7px;
+        }
+    }
+    
+    &.google {
+    	background-position: -120px -60px;
+    	
+    	&:hover {
+        	background-position: -120px -7px;
+        }
+    }
+    
+    &.safary {
+    	background-position: -178px -61px;
+    	
+    	&:hover {
+        	background-position: -178px -8px;
+        }
+    }
+    
+    &.ie {
+    	background-position: -64px -60px;
+    	
+    	&:hover {
+        	background-position: -64px -7px;
+        }
+    }
+}
+
+.tru-colour-icon {
+    display: inline-block;
+    width: 74px;
+    height: 52px;
+    margin-bottom: 10px;
+    opacity: 0.4;
+    .background-image('tru-colour-slider-icons.png');
+    .transition(opacity 0.7s);
+
+    &.cfl {
+        background-position: -13px -14px;
+    }
+    
+    &.led {
+        background-position: -14px -75px;
+    }
+    
+    &.tru-colour {
+        background-position: -13px -127px;
+    }
+    
+    &.incandescent {
+        background-position: -115px -73px;
+    }
+    
+    &.sunlight {
+        background-position: -115px -13px;
+    }
+}
+
+.download-icon {
+    display: inline-block;
+    width: 65px;
+    height: 65px;
+    .background-image('download-icon.png');
+    
+    &.download-sustainability_report {
+        background-position: -6px -148px;
+        
+        &.coloured {
+            background-position: -6px -9px;
+            
+            &.exterior {
+                background-position: -6px -77px;
+            }
+        }
+    }
+    
+    &.download-brochure {
+        background-position: -72px -148px;
+        
+        &.coloured {
+            background-position: -72px -9px;
+            
+            &.exterior {
+                background-position: -72px -77px;
+            }
+        }
+    }
+
+    &.download-datasheet,
+    &.download-wallbox {
+        background-position: -138px -148px;
+        
+        &.coloured {
+            background-position: -138px -9px;
+            
+            &.exterior {
+                background-position: -138px -77px;
+            }
+        }
+    }
+    
+    &.download-images,
+    &.download-lookbook {
+        background-position: -205px -148px;
+        
+        &.coloured {
+            background-position: -205px -9px;
+            
+            &.exterior {
+                background-position: -205px -77px;
+            }
+        }
+    }
+    
+    &.download-revit {
+        background-position: -271px -148px;
+        
+        &.coloured {
+            background-position: -271px -9px;
+            
+            &.exterior {
+                background-position: -271px -77px;
+            }
+        }
+    }
+    
+    &.download-ies {
+        background-position: -337px -148px;
+        
+        &.coloured {
+            background-position: -337px -9px;
+            
+            &.exterior {
+                background-position: -337px -77px;
+            }
+        }
+    }
+    
+    &.download-3d {
+        background-position: -403px -148px;
+        
+        &.coloured {
+            background-position: -403px -9px;
+            
+            &.exterior {
+                background-position: -403px -77px;
+            }
+        }
+    }
+    
+    &.download-media_kit {
+        background-position: -477px -148px;
+        
+        &.coloured {
+            background-position: -477px -9px;
+            
+            &.exterior {
+                background-position: -477px -77px;
+            }
+        }
+    }
+}
+
+.icon-bulb {
+    display: inline-block;
+    position: relative;
+    float: left;
+    .background-image('icons-bulb.png');
+    
+    &.big {
+        width: 30px;
+        height: 43px;
+        background-position: -21px 0;
+    }
+    
+    &.small {
+        width: 16px;
+        height: 25px;
+        background-position: -4px -18px;
+    }
+}
+
+// Used in video
+
+.slider-arrow {
+    position: absolute;
+    width: 45px;
+    height: 80px;
+    .background-image('slider-arrows.png');
+
+    &.prev {
+        background-position: -89px -15px;
+        .rotate(180deg);
+        
+        &:hover {
+            background-position: -10px -15px;
+        }
+    }
+    
+    &.next {
+        background-position: -89px -15px;
+        
+        &:hover {
+            background-position: -10px -15px;
+        }
+    }
+}
+
+.play_button_wrap {
+    position: relative;
+    display: inline-block;
+    float: none;
+    top: 10px;
+    width: 30px;
+    height: 30px;
+    margin: 0 5px;
+    border: 2px solid @colorBg;
+    .border-radius(100%);
+    .transition(all 0.5s ease);
+
+    .play_button {
+        position: relative;
+        float: none;
+        top: 5px;
+        left: 32%;
+        width: 0;
+        height: 0;
+        border-top: 10px dotted transparent;
+        border-bottom: 10px dotted transparent;
+        border-left: 15px solid @colorBg;
+        .transition(all 0.5s ease);
+    }
+    
+    &.grey {
+        border-color: @borderColor;
+        background-color: @borderColor;
+        
+        .play_button {
+            border-left-color: @titleColor;
+        }
+    }
+    
+    &.large {
+        width: 60px;
+        height: 60px;
+        
+        .play_button {
+            top: 10px;
+            border-top-width: 20px;
+            border-bottom-width: 20px;
+            border-left-width: 30px;
+        }
+    }
+    
+    &.banner {
+        width: 80px;
+        height: 80px;
+        
+        .play_button {
+            top: 10px;
+            border-top-width: 30px;
+            border-bottom-width: 30px;
+            border-left-width: 40px;
+        }
+    }
+    
+    &.overlay {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        margin: -17px auto 0;
+        
+        &.large {
+            margin-top: -32px;
+        }
+        
+        &.banner {
+            margin-top: -40px;
+        }
+    }
+}
+
+// Magnifying glass
+
+.ico {
+	display: inline-block;
+}
+
+.ico-magnify {
+    position: relative;
+    display: inline-block;
+    border-radius: 30px;
+    height: 8px;
+    width: 8px;
+    border: 2px solid @borderColor;
+
+    &:after {
+        content: "";
+        position: absolute;
+        height: 3px;
+        width: 7px;
+        background: @borderColor;
+        top: 9px;
+        left: 6px;
+        .rotate(45deg);
+  }
+  
+}

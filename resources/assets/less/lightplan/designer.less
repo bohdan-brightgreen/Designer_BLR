@@ -1,0 +1,257 @@
+/************************************************
+ * Designer
+ */
+
+ #designer {
+ 	width: 100%;
+ 	height: 100%;
+	//background: white url('../img/grid.png') repeat top left;
+	.background-image-full(white, 'grid.png', repeat top left);
+ }
+
+
+
+ /************************************************
+  * Navigation bar
+  */
+
+#navigation_bar {
+	display: none;
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	list-style-type: none;
+	margin: 0px;
+	padding: 0px;
+}
+
+#navigation_bar li {
+	margin: 0px;
+	padding: 0px;
+	float: left;
+	vertical-align: top;
+}
+
+#navigation_bar li a {
+	font-size: 8pt;
+	display: inline-block;
+	width: 70px;
+	text-align: center;
+	padding-top: 43px;
+	line-height: 10px;
+	padding-bottom: 5px;
+	border: none;
+	background: transparent none no-repeat center 10px;
+}
+
+#navigation_bar li.active a,
+#navigation_bar li a:hover {
+	text-decoration: none;
+
+}
+
+#navigation_bar #tool_zoom_in a { .background-image('icons/zoomin.png'); }
+#navigation_bar #tool_zoom_out a { .background-image('icons/zoomout.png'); }
+#navigation_bar #tool_pan a { .background-image('icons/move_canvas.png'); }
+#navigation_bar #tool_rotate a { .background-image('icons/rotate_canvas.png'); }
+#navigation_bar #tool_fit a { .background-image('icons/fullscreen.png'); }
+
+
+
+
+/************************************************
+ * Drag asset (from sidebar)
+ */
+
+.drag_asset {
+	/* above jquery dialogs */
+	z-index:10000000 !important;
+	list-style-type: none;
+	position: relative;
+}
+
+.drag_asset a {
+	width: 54px;
+	height: 54px;
+}
+
+.drag_asset .btn {
+	border: none;
+}
+
+.drag_asset .img {
+	width: 55px;
+	margin-top: 0px;
+	vertical-align:middle;
+}
+
+.drag_asset .img img {
+	height: 35px;
+	max-width: 50px;
+}
+
+.ui-draggable-dragging .info,
+.ui-draggable-dragging .light_types {
+	display: none;
+}
+
+.drag_asset .img {
+	margin-top: 1px;
+}
+
+.drag_asset .txt {
+	display: block;
+	width: 100%;
+	position: absolute;
+	bottom: 2px;
+}
+
+.drag_asset:hover .img img {
+	filter: alpha(opacity=100);
+	-moz-opacity: 1;
+	opacity: 1;
+}
+
+.drag_asset .txt {
+	font-size: 10px;
+	line-height: 9px;
+}
+
+body.hide_drag .ui-draggable-dragging {
+	display: none !important;
+}
+
+.drag_asset_selected,
+.light_types_positioned li.light_type_selected {
+
+}
+
+li.drag_asset_selected .txt .type {
+	color: white !important;
+}
+
+
+ /************************************************
+  * Canvas controls
+  */
+
+
+.canvas_tool {
+	display: none;
+	position: absolute;
+	list-style-type: none;
+	margin: 0px;
+	left: 0px;
+}
+
+.canvas_tool li {
+	display: inline-block;
+	border: solid @bordercolor 2px;
+	background-color: white;
+
+	-webkit-transition: 0.1s linear all;
+	-moz-transition: 0.1s linear all;
+	-ms-transition: 0.1s linear all;
+	-o-transition: 0.1s linear all;
+	transition: 0.1s linear all
+}
+
+.canvas_tool_vertical li {
+	display: block;
+	margin-bottom: 3px;
+}
+
+.canvas_tool li.active {
+	.gradient (#e7e7e7, white);
+}
+
+.canvas_tool li a {
+	display: block;
+	width: 30px;
+	height: 30px;
+	//background: transparent url('../img/icons/single.png') no-repeat center center;
+	.background-image-full(transparent, 'icons/single.png', no-repeat center center);
+	text-align: left;
+	border: none;
+}
+
+.canvas_tool li .text {
+	display: inline-block;
+	width: 30px;
+	position: absolute;
+	font-size: 10px;
+	text-align: center;
+	margin-top: -15px;
+}
+
+
+/* room tools */
+
+.canvas_tool #light_tool_point a {
+    .background-image('icons/single.png');
+}
+
+.canvas_tool #light_tool_line a {
+    .background-image('icons/grid_line.png');
+}
+
+.canvas_tool #light_tool_grid a {
+    .background-image('icons/grid_square.png');
+}
+
+.canvas_tool #light_tool_round a {
+    .background-image('icons/grid_circle.png');
+}
+
+.canvas_tool #room_tool_settings a {
+    .background-image('icons/preference.png');
+}
+
+.canvas_tool #room_tool_zoom a {
+    .background-image('icons/fit_room.png');
+}
+
+/* light tools */
+
+.canvas_tool #light_tool_link a {
+    .background-image('icons/link.png');
+}
+
+.canvas_tool #light_tool_unlink a {
+    .background-image('icons/unlink.png');
+}
+
+.canvas_tool #light_tool_add a {
+    .background-image('icons/add.png');
+}
+
+.canvas_tool #light_tool_remove a {
+    .background-image('icons/remove.png');
+}
+
+.canvas_tool #light_tool_rotate a {
+    .background-image('icons/rotate.png');
+}
+
+
+/* asset tools */
+
+.canvas_tool #asset_tool_link a {
+    .background-image('icons/link.png');
+}
+
+.canvas_tool #asset_tool_unlink a {
+    .background-image('icons/unlink.png');
+}
+
+.canvas_tool #asset_tool_rotate a {
+    .background-image('icons/rotate.png');
+}
+
+.canvas_tool #asset_tool_note a {
+    .background-image('icons/notes.png');
+}
+
+.canvas_tool #asset_tool_flip a {
+    .background-image('icons/mirror.png');
+}

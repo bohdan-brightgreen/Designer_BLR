@@ -1,0 +1,710 @@
+/************************************************
+ * Collapsible
+ */
+
+
+.ui-dialog .ui-dialog-button-collapse {
+	height: 18px;
+	margin: -10px 0 0;
+	padding: 1px;
+	position: absolute;
+	right: 7px;
+	top: 50%;
+	width: 16px;
+	border: solid @bordercolor 1px;
+
+	span {
+		background-position: -48px -128px;
+	}
+}
+
+.ui-dialog .ui-dialog-button-collapse:hover {
+	background-color: @greybackground;
+}
+
+
+.ui-dialog-collapsed {
+
+	.ui-dialog-titlebar {
+		border-bottom: none;
+	}
+
+	.ui-dialog-content {
+		display: none;
+	}
+
+	.ui-dialog-button-collapse span {
+		/* plus icon */
+		background-position: -16px -128px;
+	}
+}
+
+.ui-widget-content {
+	border-color: @bordercolor;
+}
+
+
+/* dialog large padding title */
+
+.dialog_large .ui-dialog-titlebar .ui-dialog-title  {
+	margin: 6px 0px;
+}
+
+
+/* add room, add furnature, lighting design */
+.dialog_create {
+	overflow: visible;
+
+	.ui-dialog-title {
+		color: @green !important;
+	}
+}
+
+#create_panel_tabs {
+	position: absolute;
+	margin: -34px 0px 0px 4px;
+	list-style-type: none;
+
+	li {
+		margin: 0px;
+		padding: 0px;
+		float: left;
+		vertical-align: top;
+
+		a {
+			background: white none no-repeat center center;
+			padding:8px 10px;
+			margin-right: 4px;
+			width: 27px;
+			text-indent: -10000px;
+			border: solid @bordercolor 1px;
+			border-top-left-radius: 5px;
+			border-top-right-radius: 5px;
+		}
+
+		&.active a {
+			border-bottom-color: white;
+		}
+
+		&.active a:hover {
+			border-bottom-color: @darkgreybackground;
+		}
+	}
+
+
+	#add_rooms a { .background-image('icons/create.png'); }
+	#add_furniture a { .background-image('icons/furniture.png'); }
+	#add_lights a { .background-image('icons/lighting_designer.png'); }
+	#add_rooms.active a { .background-image('icons/create_selected.png'); }
+	#add_furniture.active a { .background-image('icons/furniture_selected.png'); }
+	#add_lights.active a { .background-image('icons/lighting_designer_selected.png'); }
+}
+
+
+/************************************************
+ * Add furniture
+ */
+
+ #add_furniture_dialog .drag_asset {
+ 	margin-bottom: 13px;
+ }
+
+ #add_furniture_dialog .drag_asset .txt {
+ 	font-size: 9px;
+ 	line-height: 9px;
+ }
+
+/************************************************
+ * Add rooms
+ */
+#add_room_tools {
+	margin-top: 20px;
+}
+
+#add_room_tools .btn {
+	width: 65px;
+	height: 65px;
+	border: none;
+}
+
+#add_room_tools .img {
+	margin-top: 5px;
+}
+
+#add_room_tools .txt {
+	margin-top: 12px;
+}
+
+#room_select {
+	border-right: solid @bordercolor 1px;
+	margin-right: 15px;
+}
+
+
+
+
+/************************************************
+ * Add lights
+ */
+#series_btn_list {
+	list-style-type: none;
+    margin-left: 0;
+}
+
+#series_btn_list li {
+	display: inline-block;
+}
+
+#series_btn_list li a.btn_green {
+  padding: 8px 3px;
+}
+
+#series_btn_list li a:hover {
+	background-color: @greybackground;
+}
+
+#light_options {
+	padding: 0px 10px 0px 10px;
+}
+
+#light_options select {
+	width: 200px;
+}
+
+#light_options .line_field:last-child {
+	border-bottom: none;
+}
+
+#generate_button {
+	width: 230px;
+	background-color: @green;
+	color: white;
+}
+
+#custom_light_options input.field_value {
+	width: 180px;
+	text-align: right;
+}
+
+
+/************************************************
+ * Open dialog
+ */
+
+.open_dialog .project_item {
+	margin-top: 5px;
+	height: 30px;
+}
+
+.open_dialog .project_item:hover {
+	background-color: #FDFFDE;
+}
+
+.open_dialog .project_item .project_size {
+	float: left;
+	margin-top: 6px;
+}
+
+.open_dialog .load_project {
+	display: block;
+	float: left;
+	width: 350px;
+	height: 20px;
+	overflow: hidden;
+	font-size: 15px;
+	margin-top: 3px;
+}
+
+.open_dialog .delete_project {
+	display: block;
+	float: right;
+	width: 50px;
+	font-size: 12px;
+	margin-top: 6px;
+}
+
+input[type="file"] {
+	-webkit-box-shadow: none !important;
+	-moz-box-shadow: none !important;
+	box-shadow: none !important;
+}
+
+/************************************************
+ * Wall light settings dialog
+ */
+
+ .wall_light_settings_dialog {
+ 	padding: 10px !important;
+ }
+
+.wall_light_height_slider {
+	float: left;
+	width: 195px;
+	margin-right: 5px;
+	margin-top: 5px;
+}
+
+.wall_light_height {
+	width: 40px;
+	padding: 0px 2px 0px 2px !important;
+	text-align: center;
+}
+
+/*******
+* Global dialog styles
+*/
+
+.ui-dialog {
+	padding: 0px;
+	cursor: default;
+	.ui-dialog-title {
+		font-weight: normal;
+		font-size: 22px;
+		margin: 0px;
+		color: @green;
+	}
+}
+
+
+.ui-dialog {
+	.ui-dialog-buttonset {
+		.ui-button {
+			&:first-child {
+				background-image: none;
+				background-color: @green;
+				color: #ffffff;
+			}
+		}
+	}
+}
+
+.dialog_pad {
+	padding: 15px !important;
+}
+
+.ui-dialog .ui-dialog-content,
+#add_rooms_dialog,
+#add_furniture_dialog {
+	padding: 0px;
+}
+
+/******************************************
+* This is for dialogs with borderless input fields
+******************************************/
+
+.bg_dialog {
+	.line_field {
+		input {
+			border:none;
+			box-shadow: none;
+			border-color:transparent;
+			padding:0px;
+			margin:0px;
+			&:focus {
+				border:none;
+				/*box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(0, 153, 51, 0.6);*/
+				box-shadow: none;
+				border-color:transparent;
+			}
+			&:hover {
+				background-color: @greybackground;
+			}
+		}
+		select {
+			width:150px;
+			&:hover {
+				background-color: @greybackground;
+			}
+		}
+	}
+	.line_field:last-child {
+		border-bottom:none;
+	}
+}
+
+/************************************************
+ * Room details panel
+ */
+
+@-webkit-keyframes wallLengthSliderBlink {
+  from {
+    border-color: @textcolour;
+  }
+  to {
+    border-color: transparent;
+  }
+}
+
+@keyframes wallLengthSliderBlink {
+  from {
+    border-color: @textcolour;
+  }
+  to {
+    border-color: transparent;
+  }
+}
+
+ #room_details_panel {
+ 	#room_name {
+		width: 150px;
+ 	}
+
+ 	.wall_length_slider {
+		float: left;
+		width: 230px;
+		margin-right: 5px;
+		height: 0px;
+		border-color: @textcolour;
+		margin-top: 15px;
+        -webkit-animation: wallLengthSliderBlink 0.3s ease-in-out 8 paused alternate;
+        animation: wallLengthSliderBlink 0.3s ease-in-out 8 paused alternate;
+
+		.ui-slider-handle {
+			border-radius:10px;
+			margin-top: -3px;
+			background-image:none;
+			background-color: #ffffff;
+			border: solid @textcolour 1px;
+			height: 12px;
+			width: 12px;
+			cursor: pointer;
+		}
+	}
+
+	.wall_length {
+		width: 40px;
+		text-align: center;
+		border:none;
+		box-shadow: none;
+		border-color:transparent;
+		padding:0px;
+		margin:0px;
+		margin-top: 10px;
+	}
+
+	.slider_field {
+		margin-top: 7px;
+	}
+ }
+
+/************************************************
+ * Get started dialog
+ */
+
+.get_started_options {
+	.get_started_option {
+		float:left;
+		float: left;
+		height: 230px;
+		width: 177px;
+		border-right: solid @bordercolor 1px;
+		padding: 5px 22px 40px 22px;
+
+		&:last-child {
+			border-right: none;
+			padding-right: 0px;
+		}
+
+		&:first-child {
+			padding-left: 0px;
+		}
+
+		.get_started_option_heading {
+			font-size: 18px;
+			margin-bottom: 15px;
+		}
+
+		.get_started_option_text {
+			font-size: 15px;
+			height: 80%;
+		}
+	}
+
+	.get_started_option_button {
+		margin-left: auto;
+		margin-right: auto;
+		width: 160px;
+		button {
+			width: 160px;
+			padding: 8px;
+			margin: 0px;
+			background-image: none;
+			background-color: @green;
+			color: #ffffff;
+			&:hover {
+				border-color: @greybackground;
+			}
+		}
+	}
+}
+
+
+/************************************************
+ * New dialog
+ */
+
+.new_project_dialog {
+	.field {
+		margin-bottom: 15px;
+		label {
+			display: block;
+			float: left;
+			width: 140px;
+			padding: 3px;
+			font-size: 15px;
+		}
+		input, select {
+			width: 260px;
+			border-radius: 0px;
+		}
+		select {
+			width: 270px;
+			border: 1px solid #ccc;
+			padding: 4px;
+		}
+	}
+
+	.column {
+		width: 230px;
+		float: left;
+
+		&:first-child {
+			margin-right: 115px;
+		}
+	}
+
+	.new_project_columns {
+		height: 120px;
+		border-bottom: solid @bordercolor 1px;
+		padding-bottom: 20px;
+	}
+
+	.floorplan_upload_container {
+		border-bottom: solid @bordercolor 1px;
+		padding-bottom: 20px;
+	}
+}
+
+.log_in_dialog {
+	.field {
+		margin-bottom: 15px;
+		label {
+			display: block;
+			float: left;
+			width: 140px;
+			padding: 4px;
+			font-size: 15px;
+			margin-top: 5px;
+		}
+		input, select {
+			width: 200px;
+			border-radius: 0px;
+		}
+		select {
+			border: 1px solid #ccc;
+			padding: 4px;
+		}
+	}
+
+	#login_error_message {
+		margin-bottom: 10px;
+	}
+}
+
+/*#new_project_name {
+	width: 250px;
+}
+
+#new_project_client {
+	width: 250px;
+}
+
+#new_project_client_email {
+	width: 250px;
+}
+
+#new_project_type {
+	width: 255px;
+}*/
+
+#has_floorplan_label {
+	margin-bottom: 19px;
+	font-size: 10pt;
+	margin-top: 35px;
+	color: #05478C;
+	cursor: pointer;
+	cursor: hand;
+}
+
+#floorplan_upload_container {
+	display: none;
+	padding-top: 10px;
+}
+
+#floorplan_pdf_page_container {
+	display: none;
+}
+
+#floorplan_pdf_page {
+	width: 40px
+}
+
+.has_floorplan_label {
+	margin-bottom: 19px;
+	font-size: 10pt;
+	margin-top: 35px;
+	color: #05478C;
+	cursor: pointer;
+	cursor: hand;
+}
+
+.floorplan_upload_container {
+	display: none;
+	padding-top: 10px;
+}
+
+.floorplan_pdf_page_container {
+	display: none;
+}
+
+.floorplan_upload_container {
+	.field {
+		.floorplan_pdf_page {
+			width: 40px
+		}
+	}
+}
+
+
+#image_cropper {
+  background-color: #ccc;
+  width: 100%;
+  height: 320px;
+}
+
+#image_crop_dialog {
+
+  .crop_rotate_container {
+    display: inline-block;
+    width: 90%;
+    float: right;
+  }
+
+  .crop_image_wrap {
+    margin-top: 20px;
+  }
+
+  #crop_rotate_slider {
+    display: inline-block;
+    width: 98%;
+    margin: 0 5px;
+    height: 0.4em;
+    background: #666;
+
+    a {
+      width: 13px;
+      height: 13px;
+      padding: 0;
+      margin-top: -1px;
+      border-radius: 13px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      opacity: 1;
+      cursor: pointer;
+
+      span {
+        position: absolute;
+        width: 42px;
+        text-align: center;
+        margin: -18px 0 0 -12px;
+      }
+    }
+  }
+}
+
+.dialog_grey .ui-dialog-title {
+  color:@fontcolor;
+}
+
+.export_dialog {
+  #pdf_note_text {
+    width: 450px;
+    height: 140px;
+  }
+
+  .pdf_options label {
+    display: inline-block;
+    width: 130px;
+  }
+}
+
+.small_dialog_heading .ui-dialog-titlebar .ui-dialog-title {
+  font-size: 16px;
+}
+
+.light_indicator_holder {
+  padding: 5px 12px 12px 12px;
+  .light_indicator {
+    width:100%;
+    height:35px;
+    border: solid @bordercolor 1px;
+    text-align: center;
+    color: #ffffff;
+    font-size: 16px;
+    padding-top:12px;
+  }
+  .no_lights {
+    background-color: #1A1A1A;
+  }
+  .too_dim {
+    background-color: #0071BC;
+  }
+  .about_right {
+    background-color: #009933;
+  }
+  .too_bright {
+    background-color: #FF931E;
+  }
+  .light_indicator_disclaimer {
+    text-align: center;
+  }
+}
+
+#light_indicator_list {
+  padding-bottom: 0px;
+}
+
+/************************************************
+ * Help
+ */
+.help_button {
+  display: inline-block;
+  width: 160px;
+  margin: 10px 10px 15px 0;
+}
+.help_button button {
+  width: 160px;
+  padding: 8px;
+  margin: 0px;
+  background-image: none !important;
+  background-color: #009933 !important;
+  color: #ffffff !important;
+}
+
+.help_button button:hover {
+  border-color: #f1f1f1;
+}
+
+.help-video {
+  display: none;
+  z-index: 0;
+}
+
+.help-video.visible {
+  display: block;
+  z-index: 1;
+}
+
+#help_dialog a {
+  color: @bgColour;
+}

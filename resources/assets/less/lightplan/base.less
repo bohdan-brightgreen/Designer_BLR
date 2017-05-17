@@ -1,0 +1,330 @@
+html, body {
+	width: 100%;
+	height: 100%;
+	margin: 0px;
+	padding: 0px;
+}
+
+body {
+	font-family: 'DinLight', Arial, sans-serif !important;
+	color: @fontcolor;
+
+	/* disable text selection */
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: moz-none;
+	-ms-user-select: none;
+	user-select: none;
+
+}
+
+.selectable_text {
+    /* enable text selection */
+	-webkit-touch-callout: text;
+	-webkit-user-select: text;
+	-khtml-user-select: text;
+	-moz-user-select: text;
+	-ms-user-select: text;
+	user-select: text;
+}
+
+
+input,button,select,textarea {
+	font-family: 'DinLight', Arial, sans-serif !important;
+}
+
+#lighting_designer {
+	width: 100%;
+	height: 100%;
+}
+
+#designer {
+	width: 100%;
+	height: 100%;
+}
+
+input {
+	z-index: 1100 !important;
+	position: relative;
+}
+
+a {
+	color: @fontcolor;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+*:focus {
+    outline: 0;
+}
+
+
+
+/************************************************
+ * Buttons
+ */
+
+.btn {
+	padding: 0px;
+	border: solid @bordercolor 1px;
+	border-radius: 0px;
+	text-align: center;
+	.box-shadow(none);
+	.text-shadow(none);
+}
+
+.btn:hover {
+
+}
+
+.btn_green {
+	padding: 8px;
+	min-width: 60px;
+}
+
+.active .btn_green {
+	background-color: @green !important;
+	color: white;
+}
+
+
+/************************************************
+ * Fields
+ */
+
+.line_field {
+	border-bottom: solid @bordercolor 1px;
+	padding: 8px 0px 8px 0px;
+
+    .colour {
+      width: 14px;
+      height: 14px;
+      display: inline-block;
+      vertical-align: middle;
+      border-radius: 50%;
+    }
+
+    .field_label {
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    .field_value {
+      float: right;
+    }
+}
+
+
+/************************************************
+ * Select
+ */
+
+select {
+	color: #404040;
+	//background: white url('../img/icons/dropdown_arrow.png') no-repeat center right;
+	.background-image-full(white, 'icons/dropdown_arrow.png', no-repeat center right);
+    -webkit-appearance: none;
+    border: none;
+    padding: 0px 30px 0px 0px;
+    margin: 0px;
+    min-width: 100px;
+    border-radius: 0px;
+    line-height: 18px;
+    cursor: pointer;
+}
+
+select:focus {
+	outline:none;
+}
+
+select:hover {
+	background-color: @greybackground;
+}
+
+.text_center {
+	text-align: center;
+}
+
+/************************************************
+ * Loading style
+ */
+
+ .loading {
+ 	position: absolute;
+ 	width: 100%;
+ 	height: 100%;
+ 	top: 0px;
+ 	left: 0px;
+ 	//background: rgba(255, 255, 255, 0.9) url('../img/loading.gif') no-repeat center center;
+ 	.background-image-full(rgba(255, 255, 255, 0.9), 'loading.png', no-repeat center center);
+ }
+
+/************************************************
+ * Collapsibles
+ */
+
+.collapsible .collapsible_header {
+	display: block;
+	//background: @greybackground url('../img/icons/dropdown_arrow_left.png') no-repeat center right;
+	//.background-image-full(@greybackground, 'icons/dropdown_arrow_left.png', no-repeat center right);
+    .background-image-full(@greybackground, 'icons/dropdown_arrow.png', no-repeat center right);
+	border: solid @bordercolor 1px;
+	color: @green;
+	padding: 5px;
+}
+
+.collapsible .collapsible_header.no_border {
+	border-top:none;
+}
+
+.collapsible .collapsible_header:hover {
+	background-color: @darkgreybackground !important;
+}
+
+.collapsible .collapsible_content {
+	display: none;
+}
+
+.collapsible.expanded .collapsible_header {
+	//.background-image('icons/dropdown_arrow.png');
+  .background-image('icons/dropdown_arrow_up.png');
+}
+
+.collapsible.expanded .collapsible_content {
+	display: block;
+}
+
+
+/************************************************
+ * Selectable
+ */
+
+ .selectable {
+	margin: 0px;
+ }
+
+ .selectable li {
+ 	vertical-align: top;
+ 	cursor: pointer;
+ 	display: inline-block;
+ 	margin-right: 0px;
+ 	margin-bottom: 5px;
+ 	list-style: none;
+
+ 	border: solid transparent 1px;
+ 	border-radius: 4px;
+ }
+
+ .selectable li a {
+ 	display: inline-block;
+ 	text-align: center;
+ 	color: #333;
+ }
+
+ .selectable li:hover,
+ .selectable li.active {
+	border: solid @bordercolor 1px;
+ }
+
+ .selectable li.active {
+ 	.gradient (#ebebeb, white);
+ }
+
+
+/************************************************
+ * Tooltip
+ */
+
+#tooltip {
+	position: absolute;
+	width: 680px;
+	top: 20px;
+	padding: 10px;
+	font-size: 11pt;
+	font-weight: bold;
+	text-align: center;
+	font-size: 12px;
+}
+
+#tooltip_disable {
+	float: right;
+	margin-right: 15px;
+	color: #2269F3;
+}
+
+/*
+* This is for the full screen loader when communicating with the server
+*/
+#loading-screen {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	z-index: 2000;
+    margin: -100px 0 0;
+	opacity: 0.8;
+	background-color: black;
+	display:none;
+}
+#loading-screen-message {
+	text-align: center;
+	margin-top: 10%;
+	color:white;
+}
+
+#loading-screen-text {
+	font-weight:bold;
+	font-size:14pt;
+	margin-bottom:5px;
+}
+
+#loading-screen-progress {
+	width: 300px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/*
+* This is for the full screen error message
+*/
+#error-screen {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	z-index: 2001;
+	opacity: 0.8;
+	background-color: red;
+	display:none;
+}
+#error-screen-message {
+	text-align: center;
+	margin-top: 10%;
+	color:white;
+}
+
+#error-screen-text {
+	font-weight:bold;
+	font-size:14pt;
+	margin-bottom:5px;
+}
+
+#error-screen-detail {
+	font-weight:bold;
+	font-size:12pt;
+	margin-bottom:5px;
+}
+
+
+.small {
+	font-size: 10px;
+}
+
+:focus {
+	outline: none;
+}
+
+.small_pad {
+	padding: 10px;
+}

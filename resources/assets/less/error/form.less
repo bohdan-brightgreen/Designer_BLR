@@ -1,0 +1,184 @@
+/* Form elements */
+
+input,
+textarea,
+select {
+	display: inline-block;
+	width: 100%;
+	padding: 5px 10px;
+	color: @textColor;
+	background: @backgroundColor;
+	border: @border;
+	font-family: @fontFamilyLight;
+	.border-box;
+    .border-radius(0);
+}
+
+input,
+select {
+	height: 38px;
+}
+
+select {
+	outline: none;
+	-webkit-appearance: none;
+	   -moz-appearance: none;
+	        appearance: none;
+	cursor: pointer;
+	padding-left: 6px;
+	text-indent: 0.01px;
+	text-overflow: "";
+}
+
+input {
+    &.clickable {
+	    padding-right: 30px;
+    }
+}
+
+input[type=checkbox] {
+	width: 20px !important;
+	height: 20px;
+	margin: 0;
+	visibility: hidden;
+}
+
+.input {
+    margin: 10px 0;
+
+    &.wrap {
+	    position: relative;
+	    
+	    .icon {
+	        
+	        &.search {
+        	    position: absolute;
+        	    top: 3px;
+        	    right: 3px;
+        	    cursor: pointer;
+	        }
+        }
+    }
+}
+
+.checkbox-wrap {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.checkbox {
+	position: relative;
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+    margin-right: 5px;
+	
+	label {
+    	cursor: pointer;
+    	position: absolute;
+    	width: 16px;
+    	height: 16px;
+    	top: 0;
+    	left: 0;
+    	border: @border;
+    	
+    	&:after {
+        	opacity: 0;
+        	content: '';
+        	position: absolute;
+        	width: 9px;
+        	height: 5px;
+        	background: transparent;
+        	top: 3px;
+        	left: 3px;
+        	border: 2px solid #808080;
+        	border-top: none;
+        	border-right: none;
+        	.rotate(-45deg);
+        	.transition(opacity 0.3s);
+    	}
+    	
+    	&:hover::after {
+            opacity: 0.5;
+        }
+    }
+    
+    input[type=checkbox]:checked + label:after {
+    	opacity: 1;
+    }
+}
+
+
+/* Targetting Webkit browsers only. FF will show the dropdown arrow with so much padding. */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+	select {
+		padding-right: 30px;
+	}
+}
+
+.select {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+	    
+    &:before {
+    	content: '';
+    	position: absolute;
+    	display: block;
+    	width: 25px;
+    	height: 36px;
+    	top: 1px;
+    	right: 1px;
+    	pointer-events: none;
+    }
+	    
+    &:after {
+    	content: '>';
+    	position: absolute;
+    	width: 36px;
+    	height: 20px;
+    	top: 9px;
+    	right: -7px;
+    	color: @textColor;
+    	font: 20px "Consolas", monospace;
+    	pointer-events: none;
+    	.rotate(90deg);
+    	
+    	/* FF fix */
+    	background: #fff;
+    	text-align: center;
+    }
+    
+    &.disabled {
+        select {
+            background-color: @backgroundColorAlt;
+            cursor: default;
+        }
+	    
+	    &:before {
+        	background-color: @backgroundColorAlt;
+        }
+	    
+	    &:after {
+        	background-color: @backgroundColorAlt;
+        }
+    }
+}
+
+form {
+    &.short {
+        max-width: 500px;
+        
+        .input {
+            label {
+                display: inline-block;
+                width: 150px;
+            }
+            
+            input,
+            .select {
+                width: 345px;
+            }
+        }
+    }
+}

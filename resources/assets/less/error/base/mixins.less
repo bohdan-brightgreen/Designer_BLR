@@ -1,0 +1,387 @@
+.border-box,
+.border-box:before,
+.border-box:after {
+    -webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+
+.prevent-select {
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+         -o-user-select: none;
+            user-select: none;
+}
+
+.flexbox {
+    display: -ms-flexbox;
+    -ms-box-orient: horizontal;
+    display: -webkit-box;
+    display: -moz-box;
+    display: moz-box-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -webkit-flex;
+    display: flex;
+}
+
+.flex-wrap {
+    -moz-box-wrap: wrap;
+    -webkit-box-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    -ms-flexbox-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.flex-row {
+    -moz-box-direction: row;
+    -webkit-box-direction: row;
+    -webkit-box-orient: horizontal;
+    -webkit-flex-direction: row;
+    -ms-flexbox-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+}
+
+.flex-column {
+    -moz-box-direction: column;
+    -webkit-box-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -ms-flexbox-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+.flex-justify-content(@align) {
+    -webkit-justify-content: @align;
+       -moz-justify-content: @align;
+        -ms-justify-content: @align;
+            justify-content: @align;
+}
+
+.flex-align-items(@align) {
+    -webkit-align-items: @align;
+       -moz-align-items: @align;
+        -ms-align-items: @align;
+            align-items: @align;
+}
+
+.flex-align-content(@align) {
+    -webkit-align-content: @align;
+       -moz-align-content: @align;
+        -ms-align-content: @align;
+            align-content: @align;
+}
+
+.flex(@grow: 0, @shrink: 1, @basis: auto) {
+    -webkit-flex: @arguments;
+        -ms-flex: @arguments;
+            flex: @arguments;
+}
+
+.flex-order(@order) {
+    -webkit-box-ordinal-group: @order;
+       -moz-box-ordinal-group: @order;
+    -ms-flex-order: @order;
+    -webkit-order: @order;
+    order: @order;
+}
+
+.background-image(@image) {
+    background: url('../img/@{image}');
+}
+
+.background-image(@image; @params) {
+    background: url('../img/@{image}') @params;
+}
+
+.border-radius(@radius) {
+    -webkit-border-radius: @radius;
+	   -moz-border-radius: @radius;
+	        border-radius: @radius;
+}
+
+.box-shadow(@offset-x: 1px, @offset-y: 1px, @blur-rad: 2px, @spread-rad: 0, @color: #1b1b1b) {
+	-webkit-box-shadow: @arguments;
+  	   -moz-box-shadow: @arguments;
+  	     -o-box-shadow: @arguments;
+	        box-shadow: @arguments;
+}
+
+.box-shadow-none {
+	-webkit-box-shadow: none;
+  	   -moz-box-shadow: none;
+  	     -o-box-shadow: none;
+	        box-shadow: none;
+}
+
+.transition(@transition) {
+	-webkit-transition: @transition;
+	   -moz-transition: @transition;
+	    -ms-transition: @transition;
+	     -o-transition: @transition;
+	        transition: @transition;
+}
+
+.transition2(@transition1, @transition2) {
+	-webkit-transition: @transition1, @transition2;
+	   -moz-transition: @transition1, @transition2;
+	    -ms-transition: @transition1, @transition2;
+	     -o-transition: @transition1, @transition2;
+	        transition: @transition1, @transition2;
+}
+
+.transition3(@transition1, @transition2, @transition3) {
+	-webkit-transition: @transition1, @transition2, @transition3;
+	   -moz-transition: @transition1, @transition2, @transition3;
+	    -ms-transition: @transition1, @transition2, @transition3;
+	     -o-transition: @transition1, @transition2, @transition3;
+	        transition: @transition1, @transition2, @transition3;
+}
+
+.transform(@string) {
+	-webkit-transform: @string;
+	   -moz-transform: @string;
+	    -ms-transform: @string;
+	     -o-transform: @string;
+	        transform: @string;
+}
+
+.scale(@x, @y: 1.0) {
+	-webkit-transform: scale(@x, @y);
+	   -moz-transform: scale(@x, @y);
+	    -ms-transform: scale(@x, @y);
+	     -o-transform: scale(@x, @y);
+            transform: scale(@x, @y);
+}
+
+.rotate(@deg) {
+	-webkit-transform: rotate(@deg);
+	   -moz-transform: rotate(@deg);
+	    -ms-transform: rotate(@deg);
+	     -o-transform: rotate(@deg);
+            transform: rotate(@deg);
+}
+
+.skew(@deg, @deg2) {
+	-webkit-transform: skew(@deg, @deg2);
+	   -moz-transform: skew(@deg, @deg2);
+	    -ms-transform: skew(@deg, @deg2);
+	     -o-transform: skew(@deg, @deg2);
+            transform: skew(@deg, @deg2);
+}
+
+.translate(@x, @y:0) {
+	-webkit-transform: translate(@x, @y);
+	   -moz-transform: translate(@x, @y);
+	    -ms-transform: translate(@x, @y);
+	     -o-transform: translate(@x, @y);
+            transform: translate(@x, @y);
+}
+
+.translate3d(@x, @y: 0, @z: 0) {
+	-webkit-transform: translate3d(@x, @y, @z);
+	   -moz-transform: translate3d(@x, @y, @z);
+	    -ms-transform: translate3d(@x, @y, @z);
+	     -o-transform: translate3d(@x, @y, @z);
+            transform: translate3d(@x, @y, @z);
+}
+
+.perspective(@value: 1000) {
+	-webkit-perspective: @value;
+	   -moz-perspective: @value;
+	    -ms-perspective: @value;
+	        perspective: @value;
+}
+
+.transform-origin(@x:center, @y:center) {
+	-webkit-transform-origin: @x @y;
+	   -moz-transform-origin: @x @y;
+	    -ms-transform-origin: @x @y;
+	     -o-transform-origin: @x @y;
+            transform-origin: @x @y;
+}
+
+.animation(@string) {
+    -webkit-animation: @string;
+	   -moz-animation: @string;
+	    -ms-animation: @string;
+	     -o-animation: @string;
+	        animation: @string;
+}
+
+.animation(@type; @string) {
+    -webkit-animation-@{type}: @string;
+	   -moz-animation-@{type}: @string;
+	    -ms-animation-@{type}: @string;
+	     -o-animation-@{type}: @string;
+	        animation-@{type}: @string;
+}
+
+.gradient-vertical(@from, @to) {
+    background: @from;
+	background: -moz-linear-gradient(top,  @from 0%, @to 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, @from), color-stop(100%, @to));
+	background: -webkit-linear-gradient(top, @from 0%, @to 100%);
+	background: -o-linear-gradient(top, @from 0%, @to 100%);
+	background: -ms-linear-gradient(top, @from 0%, @to 100%);
+	background: linear-gradient(to bottom, @from 0%, @to 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@from', endColorstr='@to', GradientType=0);
+}
+
+.keyframes(@name, @frames) {
+	@-webkit-keyframes @name {
+	    @vendor: -webkit-;
+	    @frames();
+	}
+	@-moz-keyframes @name {
+	    @vendor: -moz-;
+	    @frames();
+	}
+	@-o-keyframes @name {
+	    @vendor: -o-;
+	    @frames();
+	}
+	@keyframes @name {
+	    @vendor: ~'';
+	    @frames();
+	}
+}
+
+/*
+.flex-it {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -moz-box-wrap: nowrap;
+    -webkit-box-wrap: nowrap;
+    -webkit-flex-wrap: nowrap;
+    -ms-flexbox-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+}
+.flex-row {
+    -moz-box-direction: row;
+    -webkit-box-direction: row;
+    -webkit-box-orient: horizontal;
+    -webkit-flex-direction: row;
+    -ms-flexbox-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+}
+.flex-col {
+    -moz-box-direction: column;
+    -webkit-box-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -ms-flexbox-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+.flex-align-between {
+    -webkit-box-align-content: space-between;
+    -webkit-align-content: space-between;
+    -ms-flex-align-content: space-between;
+    align-content: space-between;
+}
+.flex-align-center {
+    -webkit-box-align-content: center;
+    -webkit-align-content: center;
+    -ms-flex-align-content: center;
+    align-content: center;
+}
+.flex-align-start {
+    -webkit-box-align-content: flex-start;
+    -webkit-align-content: flex-start;
+    -ms-flex-align-content: flex-start;
+    align-content: flex-start;
+}
+.flex-align-item-start {
+    -webkit-box-align: flex-start;
+    -webkit-align-items: flex-start;
+    -moz-box-align: flex-start;
+    -ms-flex-align: flex-start;
+    align-items: flex-start;
+}
+.flex-align-item-center {
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+.flex-start-all {
+    -webkit-box-pack: justify;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: justify;
+    -moz-box-pack: justify;
+    justify-content: flex-start;
+    -webkit-box-align: flex-start;
+    -webkit-align-items: flex-start;
+    -moz-box-align: flex-start;
+    -ms-flex-align: flex-start;
+    align-items: flex-start;
+    -webkit-box-align-content: flex-start;
+    -webkit-align-content: flex-start;
+    -ms-flex-align-content: flex-start;
+    align-content: flex-start;
+}
+.flex-align-item-stretch {
+    -webkit-box-align: stretch;
+    -webkit-align-items: stretch;
+    -moz-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+}
+.flex-justify-between {
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    -moz-box-pack: justify;
+    justify-content: space-between;
+}
+.flex-justify-center {
+    -webkit-box-pack: justify;
+    -webkit-justify-content: center;
+    -ms-flex-pack: justify;
+    -moz-box-pack: justify;
+    justify-content: center;
+}
+.flex-justify-start {
+    -webkit-box-pack: justify;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: justify;
+    -moz-box-pack: justify;
+    justify-content: flex-start;
+}
+.flex-justify-end {
+    -webkit-box-pack: justify;
+    -webkit-justify-content: flex-end;
+    -ms-flex-pack: justify;
+    -moz-box-pack: justify;
+    justify-content: flex-end;
+}
+.flex-wrap {
+    -moz-box-wrap: wrap;
+    -webkit-box-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    -ms-flexbox-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+.flex-item-auto {
+    -webkit-box-basis: auto;
+    -webkit-flex-basis: auto;
+    -ms-flex-basis: auto;
+    flex-basis: auto;
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1 0 auto;
+    flex: 1;
+}
+*/

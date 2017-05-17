@@ -1,0 +1,12 @@
+.button {
+    background-color: @colorBg;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    .transition(all 0.3s);
+    
+    &:hover {
+        background-color: @colorBgHover;
+        .box-shadow(0, 0, 15px, 5px, rgba(0,0,0,0.15));
+    }
+}

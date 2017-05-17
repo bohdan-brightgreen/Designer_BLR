@@ -1,0 +1,468 @@
+// Standart reusable elements
+
+.stretcher {
+    position: relative;
+    padding: 0 10%;
+    overflow: auto;
+}
+
+article {
+    position: relative;
+    padding: 60px 10%;
+    background-color: @backgroundColor;
+    
+    h1, h2, h3, h4, h5, h6 {
+        line-height: 1.3em;
+        letter-spacing: -0.03em;
+    }
+
+    p, a {
+        line-height: 25px;
+        letter-spacing: -0.03em;
+        margin-bottom: 10px;
+    }
+    
+    h1, h2, h3, h4 {
+        color: @titleColor;
+    }
+    
+    h1 {
+        font-size: 42px;
+        padding: 20px 0 30px;
+    }
+
+    h2 {
+        font-size: 40px;
+        padding: 20px 0 30px;
+    }
+    
+    h3 {
+        font-size: 32px;
+        padding: 10px 0 25px;
+    }
+    
+    h4 {
+        font-size: 24px;
+    }
+    
+    h5 {
+        font-size: 20px;
+    }
+    
+    p, a, select {
+        font-family: @fontFamilyLight;
+        font-size: 16px;
+        
+        b {
+            font-family: @fontFamilyRegular;
+        }
+    }
+    
+    h6 {
+        font-size: 14px;
+    }
+    
+    input, select {
+        height: 34px;
+    }
+    
+    label {
+        &.select {
+    	    &:before {
+            	height: 24px;
+            }
+    	    
+    	    &:after {
+            	top: 7px;
+            }
+        }
+    }
+    
+    &.background-alt {
+        background-color: @backgroundColorAlt;
+    }
+    
+    &.tiny {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+    
+    &.semi-tiny {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+    
+    &.wide {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    
+    &.semi-wide {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    
+    .group {
+        .flexbox;
+        .flex-justify-content(flex-start);
+        .flex-align-items(stretch);
+        .flex-align-content(flex-start);
+        .flex-wrap;
+    }
+}
+
+.standart-block,
+.standard-block {
+    position: relative;
+    margin-bottom: 50px;
+    background-color: @backgroundColor;
+    vertical-align: top;
+    overflow: hidden;
+    .transition(all 0.3s);
+    
+    &.original {
+        margin-bottom: 0;
+    }
+    
+    &.col1 {
+        width: 100%;
+        
+        &.even {
+            width: 98%;
+        }
+    }
+
+    &.col2 {
+        width: 49%;
+        margin-right: 2%;
+
+        &:nth-child(2n+2) {
+            margin-right: 0;
+        }
+        
+        &.even {
+            width: 48%;
+        }
+    }
+
+    &.col3 {
+        width: 32%;
+        margin-right: 2%;
+
+        &:nth-child(3n+3) {
+            margin-right: 0;
+        }
+        
+        &.even {
+            width: 31.3%;
+        }
+    }
+    
+    &.col4 {
+        width: 23.5%;
+        margin-right: 2%;
+
+        &:nth-child(4n+4) {
+            margin-right: 0;
+        }
+        
+        &.even {
+            width: 23%;
+        }
+    }
+    
+    &.col5 {
+        width: 18.4%;
+        margin-right: 2%;
+
+        &:nth-child(5n+5) {
+            margin-right: 0;
+        }
+        
+        &.even {
+            width: 18%;
+        }
+    }
+    
+    &.even {
+        margin-left: 1%;
+        margin-right: 1%;
+    }
+
+    &:hover {
+        .box-shadow(0, 0, 15px, 5px, rgba(0,0,0,0.15));
+        
+        .image-overlay {
+            opacity: 0;
+        }
+    }
+    
+    &.no-hover {
+        &:hover {
+            .box-shadow-none;
+
+            .image-overlay {
+                opacity: 0.4;
+            }
+        }
+    }
+
+    .image-wrap {
+        position: relative;
+        width: 100%;
+        overflow: auto;
+        
+        a {
+            overflow: auto;
+            margin: 0;
+            position: relative;
+            display: block;
+        }
+    }
+    
+    img {
+        width: 100%;
+        //float: left;
+        display: block;
+    }
+    
+    .image-overlay {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: #fff;
+        opacity: 0.4;
+        .transition(opacity 0.5s ease);
+    }
+    
+    .image-description {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 10px 20px;
+        color: @textColor;
+    }
+    
+    .text {
+        padding: 20px;
+
+        &.tiny {
+            padding: 15px 10px;
+        }
+        
+        .description {
+            width: 100%;
+            //padding: 0 0 10px;
+            
+            h4 {
+                padding: 10px 0 20px;
+            }
+
+            a {
+                color: @textColor;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
+
+@media all and (max-width: 900px) {
+
+    article {
+        h1, h2 {
+            font-size: 36px;
+        }
+            
+        h3 {
+            font-size: 30px;
+        }
+    }
+}
+
+@media all and (max-width: 1000px) {
+
+    .stretcher {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+}
+
+@media all and (max-width: 800px) {
+
+    .stretcher {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    article {
+        padding-left: 5%;
+        padding-right: 5%;
+        
+        h1 {
+            font-size: 38px;
+        }
+
+        h1, h2 {
+            font-size: 36px;
+        }
+            
+        h3 {
+            font-size: 28px;
+        }
+        
+        h4 {
+            font-size: 20px;
+        }
+    }
+    
+    .standart-block,
+    .standard-block {
+        /*&.col2,
+        &.col3 {
+            width: 100%;
+            margin-right: 0;
+        }
+        
+        &.col4 {
+            width: 32%;
+            margin-right: 2%;
+    
+            &:nth-child(3n+3) {
+                margin-right: 0;
+            }
+            
+            &.even {
+                width: 31.3%;
+            }
+        }*/
+        
+        &.col5 {
+            width: 49%;
+            margin-right: 2%;
+
+            &:nth-child(2n+2) {
+                margin-right: 0;
+            }
+            
+            &.even {
+                width: 48%;
+                margin-left: 1%;
+                margin-right: 1%;
+            }
+        }
+        
+        .text {
+            padding-left: 5%;
+            padding-right: 5%;
+        }
+    }
+}
+
+@media all and (max-width: 700px) {
+
+    /*.stretcher {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    article {
+        padding-left: 5%;
+        padding-right: 5%;
+        
+        h1 {
+            font-size: 38px;
+        }
+
+        h1, h2 {
+            font-size: 36px;
+        }
+            
+        h3 {
+            font-size: 28px;
+        }
+        
+        h4 {
+            font-size: 20px;
+        }
+    }
+    
+    .standart-block {
+        &.col2,
+        &.col3 {
+            width: 100%;
+            margin-right: 0;
+        }
+        
+        &.col4 {
+            width: 49%;
+            margin-right: 2%;
+
+            &:nth-child(2n+2) {
+                margin-right: 0;
+            }
+            
+            &.even {
+                width: 48%;
+            }
+        }
+        
+        .text {
+            padding-left: 5%;
+            padding-right: 5%;
+        }
+    }*/
+    
+    .standart-block,
+    .standard-block {
+        &.col2,
+        &.col3 {
+            width: 100%;
+            margin-right: 0;
+            
+            /*&.even {
+                width: 100%;
+                margin-right: 0;
+                margin-left: 0;
+            }*/
+        }
+        
+        &.col4 {
+            width: 49%;
+            margin-right: 2%;
+
+            &:nth-child(2n+2) {
+                margin-right: 0;
+            }
+            
+            &.even {
+                width: 48%;
+            }
+        }
+    }
+
+    .content-wrapper {
+        
+        .standart-block.col1.even,
+        .standard-block.col1.even,
+        .standart-block.col2.even,
+        .standard-block.col2.even {
+            width: 100%;
+            margin-left: 0;
+            margin-right: 0;
+        }
+    }
+}
+
+@media all and (max-width: 500px) {
+
+    .standart-block,
+    .standard-block {
+        margin-bottom: 20px;
+    }
+}
