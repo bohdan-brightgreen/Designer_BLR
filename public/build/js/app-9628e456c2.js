@@ -2534,8 +2534,8 @@ app.debug = {
     data: null,
     products: null,
     init: function() {
-        //"designer.bg.dev" == document.domain ? this.api_url = "https://api.bg.dev" : this.api_url = "https://api.brightgreen.com", this.api_url += "/brightgreen/v2/lights/details", app.use_local_storage && (this.api_url = document.location.protocol + "//" + document.domain + document.location.pathname + "/js/sample.lights.json")
-        "designer.bg.dev" == document.domain ? this.api_url = "https://api.bg.dev" : this.api_url = "https://my.kikoapi.com", this.api_url += "/brightgreen/v2/lights/details", app.use_local_storage && (this.api_url = document.location.protocol + "//" + document.domain + document.location.pathname + "/js/sample.lights.json")
+        "designer.bg.dev" == document.domain ? this.api_url = "https://api.bg.dev" : this.api_url = "https://api.brightgreen.com", this.api_url += "/brightgreen/v2/lights/details", app.use_local_storage && (this.api_url = document.location.protocol + "//" + document.domain + document.location.pathname + "/js/sample.lights.json")
+        // "designer.bg.dev" == document.domain ? this.api_url = "https://api.bg.dev" : this.api_url = "https://my.kikoapi.com", this.api_url += "/brightgreen/v2/lights/details", app.use_local_storage && (this.api_url = document.location.protocol + "//" + document.domain + document.location.pathname + "/js/sample.lights.json")
     },
     get_products: function(e, t, i, s) {
 //alert("urkllll"+document.location.protocol + "//" + document.domain + document.location.pathname + "/brightgreen/v2/lights/details.json");
@@ -2543,8 +2543,8 @@ app.debug = {
         var n = "data";
         e && (n = e + "_data"), null === app.product_manager[n] || s ? $.ajax({
             type: "GET",
-            //url: this.api_url,
-            url: document.location.protocol + "//" + document.domain + document.location.pathname + "/brightgreen/v2/lights/details.json",
+            url: this.api_url,
+            // url: document.location.protocol + "//" + document.domain + document.location.pathname + "/brightgreen/v2/lights/details.json",
             data: {
                 series: e
             },
@@ -6309,7 +6309,6 @@ app.debug = {
         this.from_point = e, this.to_point = t
     },
     refresh_points: function(e, t) {
-        alert("refresh points");
         this.set_points(e, t), this.draw()
     },
     draw: function() {
