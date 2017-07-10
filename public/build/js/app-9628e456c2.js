@@ -475,7 +475,7 @@ app.debug = {
         this.dialog || this.init(), this.floorplan_uploader = new app.ui.FloorplanUpload("#new_project_floorplan", !0), app.project_manager.init();
         var t = {};
         t["Continue..."] = $.proxy(function() {
-		
+        
             var e = $("#new_project_name").val(),
                 t = $("#new_project_type").val(),
                 i = $("#new_project_client").val(),
@@ -566,7 +566,7 @@ app.debug = {
         this.dialog || this.init();
         var t = {};
         t["Continue..."] = $.proxy(function() {
-		
+        
             var e = $("#add_area_name").val();
             if ("" === e) return alert("The area name is required."), void $("#add_area_name").focus();
             if (this.floorplan_uploader.is_floorplan_selected()) {
@@ -685,7 +685,7 @@ app.debug = {
         }
     },
     on_floorplan_upload_complete: function(e, t) {
-	//alert("arrandddd====="+ JSON.stringify(t));
+    //alert("arrandddd====="+ JSON.stringify(t));
         this.uploaded_floorplan_data = t.result, this.is_new_project = t.is_new_project, this.show()
     }
 }, app.ui.create_panel = {
@@ -894,7 +894,7 @@ app.debug = {
         this.selected_designer_light && this.selected_designer_light.code !== this.selected_product.code && this.change_selected_designer_light()
     },
     on_select_product_type: function(e, t) {
-	
+    
         this.selected_product_type && this.selected_product_type.code === e.code && this.selected_product_type.series === e.series || (this.selected_product_type = e, this.render_light_options(e), this.update_selected_product())
     },
     render_light_options: function(e) {
@@ -918,7 +918,7 @@ app.debug = {
     get_selected_product: function() {
         if (this.selected_product_type.is_custom !== !0) {
             var e = this.get_selected_code();
-			
+            
             return app.product_manager.get_product_by_code(e)
         }
         return this.get_custom_light()
@@ -966,9 +966,9 @@ app.debug = {
         e.type || (e.type = e.code.toLowerCase()), this.selected_designer_light.group ? this.selected_designer_light.group.change_type(e) : this.selected_designer_light = this.selected_designer_light.change_type(e), app.ui.draw()
     },
     start_drag: function(e, t) {
-	//alert("reeeest"+JSON.stringify(this.selected_product));
+    //alert("reeeest"+JSON.stringify(this.selected_product));
         var i = $.extend({}, this.selected_product);
-	
+    
         i.type || (i.type = i.code.toLowerCase()), i.x = -1e4, i.y = -1e4;
         var s = new app.Light(i);
         app.designer.drag_asset = s, app.designer.drag_offset.x = s.width / 2 + 6, app.designer.drag_offset.y = 0 - s.height / 2, app.drag_type = i.code.toLowerCase(), app.dragging = !0, app.designer.dragging_new_asset = !0
@@ -1744,7 +1744,7 @@ app.debug = {
     },
     is_valid_floorplan_file: function(e) {
         if (e) {
-		//alert("enterrrrrrrrr"+e);
+        //alert("enterrrrrrrrr"+e);
             var t = e.split(".");
             return t = t.reverse(), $.inArray(t[0].toLowerCase(), this.valid_floorplan_types) > -1
         }
@@ -1758,11 +1758,11 @@ app.debug = {
         return !1
     },
     is_floorplan_selected: function() {
-	
+    
         return this.checkbox.is(":checked") && "" !== this.file_input.val().trim() && this.is_valid_floorplan_file(this.file_input.val().trim()) ? !0 : !1
     },
     upload_pdf: function(e, t, i) {
-	//alert("rightttttttttttttttt");
+    //alert("rightttttttttttttttt");
         this.element.find(".add_area_project_name").val(e + "_" + i), this.element.find(".add_area_project_type").val(t), this.element.find(".is_new_project").val(this.is_new_project), app.set_loading($(this.element), !0), this.element.find(".floorplan_upload_form").submit();
     }
 }), app.ui.export_dialog = {
@@ -1783,7 +1783,7 @@ app.debug = {
     init_dialog: function() {
         var e = {
             "Generate PDF": $.proxy(function() {
-			//alert("hhhhhhhhhhhh" + this.note_text_element.val());
+            //alert("hhhhhhhhhhhh" + this.note_text_element.val());
                 app.project_manager.selected_design.description = this.note_text_element.val(), this.download_pdf(), this.hide()
             }, this),
             Cancel: function() {
@@ -1832,8 +1832,8 @@ app.debug = {
                     var n = i.designs[s];
                     for (var o in n.areas) {
                         var r = n.areas[o];
-						// alert("value"+JSON.stringify(r));
-						//console.log("value =="+JSON.stringify(r.image));
+                        // alert("value"+JSON.stringify(r));
+                        //console.log("value =="+JSON.stringify(r.image));
                         r.designer_data.background = null, r.value = null, r.export_image_id = app.project_manager.export_image(r.image)
                     }
                 }
@@ -2241,7 +2241,7 @@ app.debug = {
         app.ui.draw()
     },
     export_image: function() {
-	//console.log("restin place");
+    //console.log("restin place");
         var e = this.get_image(10);
         e !== !1 ? window.open("data:image/png;base64," + e, "export_image") : app.ui.show_tooltip("Error, empty project. Add rooms, furniture and lights before exporting image")
     },
@@ -2259,7 +2259,7 @@ app.debug = {
          // a.x -= e / 2, a.y -= e / 2, a.width += e, a.height += e, paper.view.setViewSize(a.width, a.height), paper.view.setCenter(a.center), t && this.show_all_circuits(), i || app.designer.hide_light_switches(), app.designer.draw_distance_lines(), this.add_notes(), app.ui.resume_rendering(), app.ui.draw();
         a.x -= 0, a.y -= 0, a.width += 0, a.height += 0, paper.view.setViewSize(a.width, a.height), paper.view.setCenter(a.center), t && this.show_all_circuits(), i || app.designer.hide_light_switches(), app.designer.draw_distance_lines(), this.add_notes(), app.ui.resume_rendering(), app.ui.draw();
         var h = this.element.get(0).toDataURL("image/png");
-		//console.log("pop-up"+h.replace(/^data:image\/(png|jpg);base64,/, ""));
+        //console.log("pop-up"+h.replace(/^data:image\/(png|jpg);base64,/, ""));
         return h ? (h = h.replace(/^data:image\/(png|jpg);base64,/, ""), app.ui.pause_rendering(), app.designer.hide_distance_lines(), this.hide_all_circuits(), this.remove_notes(), i || app.designer.show_light_switches(), paper.view.setViewSize(o, r), this.set_center(n), this.zoom(s), app.ui.resume_rendering(), app.ui.draw(), h) : !1
     },
     zoom_in: function() {
@@ -2312,13 +2312,13 @@ app.debug = {
             e.width = this.background_img.width, e.height = this.background_img.height;
             var t = e.getContext("2d");
             t.drawImage(this.background_img, 0, 0);
-			//alert("haaai");
-			
-			
-			// ************did by NAZRIN
-			// var s = t.getImageData(0, 0, e.width, e.height);
-			// var n = s.data;
-			// for(var i=0;i<n.length;i+=4){
+            //alert("haaai");
+            
+            
+            // ************did by NAZRIN
+            // var s = t.getImageData(0, 0, e.width, e.height);
+            // var n = s.data;
+            // for(var i=0;i<n.length;i+=4){
     // if(n[i+3]<255){
         // n[i]=255;
         // n[i+1]=255;
@@ -2534,7 +2534,8 @@ app.debug = {
     data: null,
     products: null,
     init: function() {
-        "designer.bg.dev" == document.domain ? this.api_url = "https://api.bg.dev" : this.api_url = "https://api.brightgreen.com", this.api_url += "/brightgreen/v2/lights/details", app.use_local_storage && (this.api_url = document.location.protocol + "//" + document.domain + document.location.pathname + "/js/sample.lights.json")
+        //"designer.bg.dev" == document.domain ? this.api_url = "https://api.bg.dev" : this.api_url = "https://api.brightgreen.com", this.api_url += "/brightgreen/v2/lights/details", app.use_local_storage && (this.api_url = document.location.protocol + "//" + document.domain + document.location.pathname + "/js/sample.lights.json")
+        "designer.bg.dev" == document.domain ? this.api_url = "https://api.bg.dev" : this.api_url = "https://my.kikoapi.com", this.api_url += "/brightgreen/v2/lights/details", app.use_local_storage && (this.api_url = document.location.protocol + "//" + document.domain + document.location.pathname + "/js/sample.lights.json")
     },
     get_products: function(e, t, i, s) {
 //alert("urkllll"+document.location.protocol + "//" + document.domain + document.location.pathname + "/brightgreen/v2/lights/details.json");
@@ -2542,6 +2543,7 @@ app.debug = {
         var n = "data";
         e && (n = e + "_data"), null === app.product_manager[n] || s ? $.ajax({
             type: "GET",
+            //url: this.api_url,
             url: document.location.protocol + "//" + document.domain + document.location.pathname + "/brightgreen/v2/lights/details.json",
             data: {
                 series: e
@@ -2926,7 +2928,7 @@ app.debug = {
             description: t,
             value: null
         };
-		//console.log("oooooooooooooo");
+        //console.log("oooooooooooooo");
         return this.new_area = s, this.new_area.id = "temp-" + (new Date).getTime(), i ? (this.new_area.design_id = null, this.new_design.areas.push(this.new_area), this.selected_area = this.new_area) : (this.new_area.design_id = this.selected_design.id, this.selected_design.areas.push(this.new_area), this.select_area(this.new_area)), app.pub("area_created", this.new_area), this.new_area
     },
     find_area_by_id: function(e) {
@@ -3060,7 +3062,7 @@ app.debug = {
     },
     export_image: function(e) {
         this.initialised || this.init();
-		
+        
         var t = "";
         return $.ajax({
             context: this,
@@ -3069,13 +3071,13 @@ app.debug = {
             async: !1,
             data: {
                 data: e
-				
+                
             },
             xhrFields: {
                 withCredentials: !0
             },
             success: function(e) {
-			//console.log("enter=="+e);
+            //console.log("enter=="+e);
                 t = e
             }
         }), t
@@ -4769,8 +4771,10 @@ app.debug = {
             n = i[1],
             o = i[2],
             r = i[3];
-        for (var a in this.lights) t = this.lights[a], r && !e && (s = t.get_custom_light_data()), this.set_light_width_height(t), t.group = null, t.remove(!1, !0), this.remove_light(t, !0);
-        r || (s = s.toUpperCase()), app.light_manager.draw_grid(o, this.path.bounds, this, n, s), n.show_connections(!0), n.room.reconnect_light_switches(), view.draw()
+        for (var a in this.lights) t = this.lights[a], r && !e && (s = t.get_custom_light_data()), 
+            t.group = null, t.remove(!1, !0), this.remove_light(t, !0);
+        r || (s = s.toUpperCase()), app.light_manager.draw_grid(o, this.path.bounds, this, n, s), 
+        n.show_connections(!0), n.room.reconnect_light_switches(), view.draw()
     },
     refresh_box_lights: function(e) {
         var t, i = this.get_light_info(),
@@ -6305,10 +6309,13 @@ app.debug = {
         this.from_point = e, this.to_point = t
     },
     refresh_points: function(e, t) {
+        alert("refresh points");
         this.set_points(e, t), this.draw()
     },
     draw: function() {
-        this.path.segments[0].point = this.from_point, this.path.segments[1].point = this.to_point, this.label_text = (this.path.length / app.designer.room_scale).toFixed(1) + "m";
+        this.path.segments[0].point = this.from_point, 
+        this.path.segments[1].point = this.to_point,
+         this.label_text = (this.path.length / app.designer.room_scale).toFixed(1) + "m";
         var e = this.get_label_point();
         this.path_text.content = this.label_text, this.path_text.setPoint(e), paper.view.zoom < 1 ? (this.path_text.bounds.height = 10 + 10 / paper.view.zoom, this.path_text.bounds.width = 20 + 20 / paper.view.zoom) : (this.path_text.bounds.height = 20 / paper.view.zoom, this.path_text.bounds.width = 40 / paper.view.zoom), this.path_text_background.setBounds(this.path_text.bounds), this.path_text_background.moveBelow(this.path_text), this.group.visible || this.show()
     },
@@ -6613,7 +6620,7 @@ asset_erase.on_activate = function() {
                     json_version: app.json_version,
                     project_notes: app.project_notes
                 };
-				//console.log("rate ="+s);
+                //console.log("rate ="+s);
             return e && (a.image = s, app.designer.populate_notes(), a.notes = app.designer.notes), a
         },
         get_image: function(e, t, i) {

@@ -4,8 +4,8 @@ Route::group(['middleware' => ['web']], function() {
     Route::get('/', 'LightplanController@index')->name('home');
     //Route::get('/sso', 'LightplanController@index');
     // SSO
-    Route::group(['prefix' => 'sso'], function() {
-	    Route::get('/', 'LightplanController@index');
+        Route::group(['prefix' => 'sso'], function() {
+	Route::get('/', 'LightplanController@index');
         Route::get('/logout', 'SSOController@logout');
         Route::get('/{token}', 'SSOController@index');
     });

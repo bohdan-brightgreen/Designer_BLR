@@ -96,7 +96,7 @@
 
 				<div id='reflectivity_slider' class='wall_length_slider'></div>
 
-				<input type="number" step="0.1" id="reflectivity" class="wall_length" min="0" max="100"  />
+				<input type="number" step="0.1" id="reflectivity" class="wall_length" min="1" max="100"  />
 
 			</div>
 
@@ -106,7 +106,7 @@
 
 				<div id='wall_length_slider' class='wall_length_slider'></div>
 
-				<input type="number" step="0.1" id="wall_length" class="wall_length" min="0" max="100"  />
+				<input type="number" step="1" id="wall_length" class="wall_length" min="1" max="100"  />
 
 			</div>
 
